@@ -181,7 +181,8 @@ public class PDFBoxDemo
             }
 
             // Loading img from file
-            PDImageXObject pdImage = PDImageXObject.createFromFile("src/main/resources/song.png", document);
+            ClassLoader cl = PDFBoxDemo.class.getClassLoader();
+            PDImageXObject pdImage = PDImageXObject.createFromFile(cl.getResource("song.png").getFile(), document);
 
             // Draw image by  x y width height
             contentStream.drawImage(pdImage, 480, 10, 100, 100);
