@@ -190,7 +190,9 @@ public class PDFBoxDemo
             contentStream.close();
 
             // Saving the document
-            document.save(new File("..\\new_VAT_INVOICE.pdf"));
+            File file = new File("target/new_VAT_INVOICE.pdf");
+            System.out.println(file.getAbsolutePath());
+            document.save(file);
 
             // Closing the document
             document.close();
